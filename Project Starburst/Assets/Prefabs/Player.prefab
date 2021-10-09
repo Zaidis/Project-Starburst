@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 2571188754301394700}
   - component: {fileID: 2571188754301394701}
   - component: {fileID: 2571188754301394690}
+  - component: {fileID: 1609581006991915558}
   - component: {fileID: 2571188754301394691}
   m_Layer: 0
   m_Name: Player
@@ -163,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2571188754301394691}
+  playerSpeed: 2
   cam: {fileID: 2571188755117104202}
 --- !u!114 &2571188754301394690
 MonoBehaviour:
@@ -184,6 +186,21 @@ MonoBehaviour:
   minimumY: -60
   maximumY: 60
   transform: {fileID: 2571188755117104202}
+  handImageComponent: {fileID: 0}
+--- !u!114 &1609581006991915558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2571188754301394703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90bdecce30227f64c939197b724728ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasVial: 0
+  keyPieceCount: 0
 --- !u!143 &2571188754301394691
 CharacterController:
   m_ObjectHideFlags: 0

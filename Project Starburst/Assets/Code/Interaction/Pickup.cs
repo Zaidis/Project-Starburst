@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Pickup : IInteractable
 {
+   public string itemType;
+   PlayerInventory inventory;
    // Start is called before the first frame update
    void Start()
    {
-
+      inventory = GameObject.Find("Player").GetComponent<PlayerInventory>();
    }
 
    // Update is called once per frame
@@ -18,7 +20,7 @@ public class Pickup : IInteractable
 
    public override void Interact()
    {
-      Debug.Log("pickup");
+      inventory.PickUpItem(itemType);
       Destroy(gameObject);
    }
 }
