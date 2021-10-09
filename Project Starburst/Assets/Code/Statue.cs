@@ -10,8 +10,7 @@ public class Statue : MonoBehaviour
      * Follow the player by saving player object
      * When not in camera, move towards the player
      */
-
-    [SerializeField]
+    
     private GameObject m_playerObj;
 
     // This is on the object itself
@@ -31,8 +30,10 @@ public class Statue : MonoBehaviour
     {
         m_renderer = GetComponent<Renderer>();
         m_navAgent = GetComponent<NavMeshAgent>();
-        m_navAgent.speed = 1.5f;
-        m_bAlive = true;
+        m_navAgent.speed = 6f;
+        m_bAlive = false;
+        
+        // If player object is not set
     }
 
     // Update is called once per frame
@@ -41,13 +42,23 @@ public class Statue : MonoBehaviour
         if (m_bAlive)
         {
             m_targetLocation = (m_renderer.isVisible ? transform.position : m_playerObj.transform.position);
-
-            m_navAgent.SetDestination(m_targetLocation);
+            //print("Distance: " + Vector3.Distance(transform.position, m_playerObj.transform.position));
         }
+        else
+        {
+            m_targetLocation = transform.position;
+        }
+
+        m_navAgent.SetDestination(m_targetLocation);
     }
 
     public void SetAlive(bool isAlive)
     {
-        m_bAlive = isAlive;
+        m_bAlive = isAlive;        
+    }
+
+    public void SetPlayerObject(GameObject player)
+    {
+        m_playerObj = player;
     }
 }
