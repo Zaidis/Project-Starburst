@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        
+        move.Normalize();
 
         if (move != Vector3.zero)
         {
