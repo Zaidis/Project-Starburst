@@ -12,3 +12,8 @@ Project Starburst/UserSettings/EditorUserSettings.asset
 Project Starburst/ProjectSettings/Packages/com.unity.probuilder/Settings.json
 Project Starburst/Packages/packages-lock.json
 Project Starburst/ProjectSettings/Packages/com.unity.probuilder/Settings.json
+*.mat
+Project Starburst/Packages/packages-lock.json
+Project Starburst/Packages/manifest.json
+Project Starburst/ProjectSettings/Packages/com.unity.probuilder/Settings.json
+Project/Temp/UnityLockfile
