@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class Walker : MonoBehaviour
 {
    public Transform PlayerTransform, leftFootstepSpawner, rightFootstepSpawner;
@@ -16,7 +17,7 @@ public class Walker : MonoBehaviour
    {
       PlayerTransform = GameObject.Find("Player").transform;
       agent = this.gameObject.GetComponent<NavMeshAgent>();
-      InvokeRepeating("CreateFootstep", 2.0f, 1f);
+      InvokeRepeating("CreateFootstep", 1.0f, 1f);
       InvokeRepeating("Retarget", 1.0f, .2f);
    }
 
@@ -44,12 +45,6 @@ public class Walker : MonoBehaviour
       tempSpawn.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
       Destroy(tempSpawn, footstepDisspearTime);
       var sound = this.GetComponent<AudioSource>();
-      if (Physics.Linecast(transform.position, PlayerTransform.position, out RaycastHit hitInfo, 8, QueryTriggerInteraction.UseGlobal))
-      {
-         Debug.Log(hitInfo.collider.gameObject == gameObject);
-         Debug.Log(hitInfo);
-         Debug.Log("blocked");
-      }
       sound.Play();
    }
 }
