@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerLook : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerLook : MonoBehaviour
    public float maximumY = 60F;
    float rotationY = 0F;
    [SerializeField] Transform transform;
+   [SerializeField] public Image handImageComponent;
 
    string pickupTag = "Interactable";
 
@@ -50,17 +52,24 @@ public class PlayerLook : MonoBehaviour
       RaycastHit hit;
       Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
-      if (Physics.Raycast(ray, out hit))
+      if (Physics.Raycast(ray, out hit, 2.5f))
       {
-         if (Input.GetKeyDown(KeyCode.E))
+         if (hit.transform.CompareTag(pickupTag))
          {
-            if (hit.transform.CompareTag(pickupTag))
+            handImageComponent.enabled = true;
+            if (Input.GetKeyDown(KeyCode.E))
             {
-               hit.collider.gameObject.GetComponent<IInteractable>().Interact();
+               if (hit.transform.CompareTag(pickupTag))
+               {
+                  hit.collider.gameObject.GetComponent<IInteractable>().Interact();
+               }
             }
          }
       }
-
+      else
+      {
+         handImageComponent.enabled = false;
+      }
    }
 
 }

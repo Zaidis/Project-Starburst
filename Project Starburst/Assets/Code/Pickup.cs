@@ -19,5 +19,6 @@ public class Pickup : MonoBehaviour, IInteractable
    public void Interact()
    {
       Debug.Log("pickup");
+      Destroy(gameObject);
    }
 }
