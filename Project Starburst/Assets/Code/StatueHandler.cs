@@ -20,11 +20,17 @@ public class StatueHandler : MonoBehaviour
     {
         // Grab random statue to start as alive
         int randIndex = Random.Range(0, m_statueArray.Length);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void PickNewStatue()
+    {
+
     }
 }

@@ -32,6 +32,7 @@ public class Statue : MonoBehaviour
         m_renderer = GetComponent<Renderer>();
         m_navAgent = GetComponent<NavMeshAgent>();
         m_navAgent.speed = 1.5f;
+        m_bAlive = true;
     }
 
     // Update is called once per frame
