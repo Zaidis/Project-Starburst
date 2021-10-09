@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Statue : MonoBehaviour
 {
@@ -16,22 +17,36 @@ public class Statue : MonoBehaviour
     // This is on the object itself
     private Renderer m_renderer;
 
+    // Grab navmesh
+    private NavMeshAgent m_navAgent;
+
+    // Where we move to
+    private Vector3 m_targetLocation;
+
+    // Are we alive?
+    private bool m_bAlive;
+
     // Start is called before the first frame update
     void Start()
     {
         m_renderer = GetComponent<Renderer>();
+        m_navAgent = GetComponent<NavMeshAgent>();
+        m_navAgent.speed = 1.5f;
     }
 
     // Update is called once per frame
     void Update()
-    {        
-        if (m_renderer.isVisible)
+    {
+        if (m_bAlive)
         {
-            print("In view");
+            m_targetLocation = (m_renderer.isVisible ? transform.position : m_playerObj.transform.position);
+
+            m_navAgent.SetDestination(m_targetLocation);
         }
-        else
-        {
-            print("Not in view");
-        }
+    }
+
+    public void SetAlive(bool isAlive)
+    {
+        m_bAlive = isAlive;
     }
 }
