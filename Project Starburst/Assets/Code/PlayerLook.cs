@@ -14,6 +14,13 @@ public class PlayerLook : MonoBehaviour
     public float maximumY = 60F;
     float rotationY = 0F;
     [SerializeField] Transform transform;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     void Update()
     {
         if (axes == RotationAxes.MouseXAndY)
