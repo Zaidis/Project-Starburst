@@ -54,7 +54,7 @@ public class PlayerLook : MonoBehaviour
 
       if (Physics.Raycast(ray, out hit, 2.5f))
       {
-         if (hit.transform.CompareTag(pickupTag))
+         if (hit.transform.gameObject.CompareTag(pickupTag))
          {
             handImageComponent.enabled = true;
             if (Input.GetKeyDown(KeyCode.E))
@@ -64,12 +64,14 @@ public class PlayerLook : MonoBehaviour
                   hit.collider.gameObject.GetComponent<IInteractable>().Interact();
                }
             }
-         }
-      }
-      else
-      {
-         handImageComponent.enabled = false;
-      }
-   }
+         } else {
+                handImageComponent.enabled = false;
+            }
+        }
+        else {
+            handImageComponent.enabled = false;
+        }
+
+    }
 
 }

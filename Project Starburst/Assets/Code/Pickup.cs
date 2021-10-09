@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour, IInteractable
+public class Pickup : IInteractable
 {
    // Start is called before the first frame update
    void Start()
@@ -16,7 +16,7 @@ public class Pickup : MonoBehaviour, IInteractable
 
    }
 
-   public void Interact()
+   public override void Interact()
    {
       Debug.Log("pickup");
       Destroy(gameObject);
