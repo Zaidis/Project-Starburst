@@ -27,6 +27,7 @@ public class Skull : IInteractable
    {
       if(inventory.hasVial || inventory.keyPieceCount >= 4)
       {
+         inventory.gameObject.GetComponent<PlayerMovement>().m_bInvulnerable = true;
          LoadLevel.instance.LoadNextLevel();
       }
       else

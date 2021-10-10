@@ -15,10 +15,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioSource src;
     [SerializeField] AudioClip deathNoise;
     public bool canMove;
+    public bool m_bInvulnerable;
     private void Start()
     {
         isDead = false;
         canMove = true;
+        m_bInvulnerable = false;
     }
 
     void Update()
@@ -70,14 +72,17 @@ public class PlayerMovement : MonoBehaviour
 
     public void StartDeathSequence()
     {
-        // Lock input
-        isDead = true;
+        if (!m_bInvulnerable)
+        {
+            // Lock input
+            isDead = true;
 
-        // Play scream
-        src.clip = deathNoise;
-        src.Play();
-        // Fade screen
-        LoadLevel.instance.ReloadCurrentLevel();
+            // Play scream
+            src.clip = deathNoise;
+            src.Play();
+            // Fade screen
+            LoadLevel.instance.ReloadCurrentLevel();
+        }
     }
 
     float RandomPitch()
