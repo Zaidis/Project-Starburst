@@ -48,5 +48,6 @@ public class Chest : IInteractable
    {
       GameObject skull = Instantiate(ChestHandler.instance.skull, chestSpawner.transform.position,Quaternion.identity);
       skull.transform.localRotation = Quaternion.Euler(Vector3.zero);
+      skull.gameObject.GetComponentInChildren<Skull>().textMessage = "The chest need to all be open";
    }
 }
