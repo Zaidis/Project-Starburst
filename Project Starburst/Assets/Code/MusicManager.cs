@@ -24,9 +24,14 @@ public class MusicManager : MonoBehaviour
     {
         maxVolume = src.volume;
         if (SceneManager.GetActiveScene().name == "TitleScreen")
+        {
             src.clip = musicClips[0];
+            src.volume = 0.25f;
+        }
         else
+        {
             src.clip = musicClips[GetRandomSong()];
+        }
         src.Play();
     }
 
