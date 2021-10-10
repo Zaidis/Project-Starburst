@@ -1,5 +1,45 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!320 &2926785749233503642
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226893314204443877}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 3552b72d3d19fed46ac85527b94b6252, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 9130919853113155661, guid: 3552b72d3d19fed46ac85527b94b6252, type: 2}
+    value: {fileID: 5353042726673501993}
+  - key: {fileID: 5453830952760598160, guid: 3552b72d3d19fed46ac85527b94b6252, type: 2}
+    value: {fileID: 2454614674251825910}
+  m_ExposedReferences:
+    m_References: []
+--- !u!95 &5353042726673501993
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226850257826344377}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!208 &735753083264322826
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -28,6 +68,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942058722243bc24898cd3c963c5ea7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2454614674251825910
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226168102814405729}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!208 &992613738291959147
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -181,9 +240,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26c425cc71bdd5f4f860014effa97f9b, type: 3}
+--- !u!1 &2226893314204443877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1787669435972745401, guid: 26c425cc71bdd5f4f860014effa97f9b, type: 3}
+  m_PrefabInstance: {fileID: 443763214474501212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2226850257826344377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1787872736498594277, guid: 26c425cc71bdd5f4f860014effa97f9b, type: 3}
+  m_PrefabInstance: {fileID: 443763214474501212}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5790293933919586810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6229553526750778790, guid: 26c425cc71bdd5f4f860014effa97f9b, type: 3}
+  m_PrefabInstance: {fileID: 443763214474501212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2226168102814405729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1786909060041115709, guid: 26c425cc71bdd5f4f860014effa97f9b, type: 3}
   m_PrefabInstance: {fileID: 443763214474501212}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4445921555762875839 stripped
