@@ -32,16 +32,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
 
         Vector3 move = new Vector3(x, 0f, z);
         move.Normalize();
-        
-        
 
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity);
         if (move.magnitude > 0)
         {
             if (!src.isPlaying)
@@ -54,8 +50,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            controller.Move(Vector3.zero);
+            controller.Move(new Vector3(0,0,0));
         }
+
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        controller.Move(playerVelocity);
+        
     }
 
     public void StartDeathSequence()
