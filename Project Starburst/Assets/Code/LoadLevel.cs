@@ -7,11 +7,13 @@ public class LoadLevel : MonoBehaviour
 {
     public Animator transition;
     public float waitTime = 1f;
+    public AudioSource buttonPress;
 
     public static LoadLevel instance;
 
     private void Start()
     {
+        buttonPress = GetComponent<AudioSource>();
         if (instance != null)
         {
             Destroy(instance);
@@ -57,6 +59,7 @@ public class LoadLevel : MonoBehaviour
 
     IEnumerator LoadNextLevel(int levelIndex) 
     {
+        buttonPress.Play(0);
         transition.SetTrigger("start");
         yield return new WaitForSeconds(waitTime);
         SceneManager.LoadScene(levelIndex);
@@ -64,6 +67,7 @@ public class LoadLevel : MonoBehaviour
 
     public void QuitGame()
     {
+        buttonPress.Play(0);
         Application.Quit();
     }
 }
