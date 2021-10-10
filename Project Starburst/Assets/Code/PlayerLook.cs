@@ -13,6 +13,7 @@ public class PlayerLook : MonoBehaviour
    public float maximumX = 360F;
    public float minimumY = -60F;
    public float maximumY = 60F;
+   public float grabDistance = 5.0f;
    float rotationY = 0F;
    [SerializeField] Transform transform;
    [SerializeField] public Image handImageComponent;
@@ -52,7 +53,7 @@ public class PlayerLook : MonoBehaviour
       RaycastHit hit;
       Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
-      if (Physics.Raycast(ray, out hit, 2.5f))
+      if (Physics.Raycast(ray, out hit, grabDistance))
       {
             if (hit.transform.gameObject.CompareTag(pickupTag))
             {                
