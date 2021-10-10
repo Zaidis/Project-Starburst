@@ -24,7 +24,7 @@ public class Statue : MonoBehaviour
     {
         m_renderer = GetComponent<Renderer>();
         m_navAgent = GetComponent<NavMeshAgent>();
-        m_navAgent.speed = 6f;
+        m_navAgent.speed = 4f;
         m_bAlive = false;               
     }
 
@@ -59,7 +59,8 @@ public class Statue : MonoBehaviour
         {
             if (collision.gameObject.tag == "Player")
             {
-
+                // Start death sequence
+                //collision.gameObject.GetComponen<PlayerMovement>().
             }
         }
     }
