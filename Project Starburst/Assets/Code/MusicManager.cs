@@ -32,7 +32,11 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        print("Volume " + src.volume);
+        if(!src.isPlaying)
+        {
+            src.clip = musicClips[GetRandomSong()];
+            src.Play();
+        }
     }
 
     int GetRandomSong()
@@ -59,7 +63,9 @@ public class MusicManager : MonoBehaviour
         {
             src.volume -= Time.deltaTime * fadeSpeed;
             yield return null;
-        }        
+        }
+        src.clip = musicClips[GetRandomSong()];
+        src.Play();
     }
     public IEnumerator FadeIn()
     {        
