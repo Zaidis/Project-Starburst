@@ -8,6 +8,11 @@ public class Chains : MonoBehaviour
     [SerializeField] int threshold = 10;
     public int counter = 0;
     int currentTarget = -2;
+    AudioSource src;
+    private void Awake()
+    {
+        src = GetComponent<AudioSource>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -21,16 +26,19 @@ public class Chains : MonoBehaviour
         if (input > 0 && currentTarget == 1)
         {
             counter++;
+            src.Play();
             currentTarget = -currentTarget;
         }
         else if (input < 0 && currentTarget == -1)
         {
             counter++;
+            src.Play();
             currentTarget = -currentTarget;
         } 
         else if(currentTarget == -2 && input != 0)
         {
             counter++;
+            src.Play();
             currentTarget = -(int)input;
         }
         if (counter >= threshold)
