@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &140916234731288801
 RectTransform:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &140916235866808663
 MonoBehaviour:
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 140916235866808657}
-  waitTime: 1
+  waitTime: 3
 --- !u!225 &140916235866808659
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -255,8 +255,8 @@ CanvasGroup:
   m_GameObject: {fileID: 140916235866808685}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &140916236079974739
 GameObject:

@@ -1,33 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Chest : IInteractable
 {
 
-    private bool open;
+    public bool open;
     private Animator anim;
-
+    public int id;
+    public TextMeshPro chestNumberText;
+    public bool FinalChest;
     private void Awake() {
         anim = transform.parent.GetComponent<Animator>();
+    }
+
+    private void Start() {
+        chestNumberText.text = id.ToString();
     }
     public override void Interact()
     {
         if (!open) {
-
             OpenChest();
-
-        } else {
-            CloseChest();
-        }
-
+        } 
     }
 
     private void OpenChest() {
-        anim.Play("chestOpen");
+        print("Opening Chest");
         open = true;
+        anim.Play("chestOpen");
+        ChestHandler.instance.CheckChest(id);
+        if (FinalChest) {
+            if (ChestHandler.instance.CheckCode()) {
+                ChestHandler.instance.OpenDoor();
+            }
+        }
     }
-    private void CloseChest() {
+    public void CloseChest() {
         anim.Play("chestClose");
         open = false;
     }
