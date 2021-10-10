@@ -35,10 +35,10 @@ public class LoadLevel : MonoBehaviour
     public void LoadNextLevel() 
     {
         StartCoroutine(LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1));
-        if (MusicManager.instance != null)
-        {
-            MusicManager.instance.ToggleMusic(false);
-        }
+        //if (MusicManager.instance != null)
+        //{
+        //    MusicManager.instance.ToggleMusic(false);
+        //}
     }
 
     public void LoadMenu()
