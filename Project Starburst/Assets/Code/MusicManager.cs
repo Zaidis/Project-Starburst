@@ -36,6 +36,8 @@ public class MusicManager : MonoBehaviour
     }
     public void Transition(int index)
     {
+        if (!src.enabled)
+            src.enabled = true;
         StartCoroutine(TransitionSong(index));
     }
 
