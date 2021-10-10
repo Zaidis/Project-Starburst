@@ -31,6 +31,10 @@ public class ChestHandler : MonoBehaviour
         print("I opened the door!");
     }
 
+    /// <summary>
+    /// Adds number to the code, or will reset all chests if the number order was wrong. 
+    /// </summary>
+    /// <param name="num"></param>
     public void CheckChest(int num) {
         if(num == newCode[nextNum]) {
             currentCode.Add(num);
@@ -42,17 +46,30 @@ public class ChestHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called when attempting to open the door. 
+    /// </summary>
+    /// <returns></returns>
     public bool CheckCode() {
-        for(int i = 0; i < 5; i++) {
-            if(newCode[i] == currentCode[i]) {
-                continue;
-            } else {
-                return false;
+        if(currentCode.Count == 4) {
+            for (int i = 0; i < 5; i++) {
+                if (newCode[i] == currentCode[i]) {
+                    continue;
+                }
+                else {
+                    return false;
+                }
             }
+        } else {
+            //fixes the chest bug. will return false if the rest of the chests have not been opened yet
+            return false;
         }
         return true;
     }
 
+    /// <summary>
+    /// Resets all of the chests. Closes them all, and clears the current code. 
+    /// </summary>
     public void ResetChests() {
         nextNum = 0;
         foreach(Chest chest in chests) {
@@ -88,6 +105,9 @@ public class ChestHandler : MonoBehaviour
         return false;
     } */
 
+    /// <summary>
+    /// Sets up all of the ID's for each chest. 
+    /// </summary>
     private void InitializeChests() {
         for(int i = 0; i < chests.Length; i++) {
             chests[i].id = newCode[i];
