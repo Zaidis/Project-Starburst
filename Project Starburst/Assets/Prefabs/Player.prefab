@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCharge: 300
   currentCharge: 0
-  rechargeRate: 30
+  rechargeRate: 90
   usageSpeed: 5
   flickerEvent: 30
   lightIntensityTarget: 0.4
@@ -270,6 +270,7 @@ MonoBehaviour:
   src: {fileID: 1897507855514837337}
   deathNoise: {fileID: 8300000, guid: a9886429cf13c084ca9214d00b08015f, type: 3}
   canMove: 0
+  m_bInvulnerable: 0
 --- !u!114 &2571188754301394690
 MonoBehaviour:
   m_ObjectHideFlags: 0
