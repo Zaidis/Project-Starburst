@@ -40,6 +40,11 @@ public class LoadLevel : MonoBehaviour
         StartCoroutine(LoadNextLevel(SceneManager.GetActiveScene().buildIndex));
     }
 
+    public void GoToDeathScreen()
+    {
+        // Enter state
+    }
+
     IEnumerator LoadNextLevel(int levelIndex) 
     {
         transition.SetTrigger("start");

@@ -23,8 +23,7 @@ public class Statue : MonoBehaviour
     void Start()
     {
         m_renderer = GetComponent<Renderer>();
-        m_navAgent = GetComponent<NavMeshAgent>();
-        m_navAgent.speed = 6f;
+        m_navAgent = GetComponent<NavMeshAgent>();        
         m_bAlive = false;               
     }
 
