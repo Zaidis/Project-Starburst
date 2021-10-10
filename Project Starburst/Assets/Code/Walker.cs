@@ -47,8 +47,15 @@ public class Walker : MonoBehaviour
       Destroy(tempSpawn, footstepDisspearTime);
       var sound = this.GetComponent<AudioSource>();
       sound.Play();
+   }
+   private void OnCollisionEnter(Collision collision)
+   {
+      if (collision.gameObject.tag == "Player")
+      {
+         print("Kill");
 
-
-
+         // Start death sequence on the player
+         collision.gameObject.GetComponent<PlayerMovement>().StartDeathSequence();
+      }
    }
 }
