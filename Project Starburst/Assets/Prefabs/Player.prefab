@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42f0dfb961cfb64ebb8490cbf62819a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCharge: 100
+  maxCharge: 300
   currentCharge: 0
   rechargeRate: 30
   usageSpeed: 5
