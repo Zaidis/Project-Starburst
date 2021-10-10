@@ -17,6 +17,7 @@ public class MusicManager : MonoBehaviour
             Destroy(this.gameObject);
 
         src = GetComponent<AudioSource>();
+        DontDestroyOnLoad(this.gameObject);
     }
     // Start is called before the first frame update
     void Start()
@@ -33,19 +34,23 @@ public class MusicManager : MonoBehaviour
     {
         return Random.Range(1, musicClips.Length);
     }
-    public void Transition()
+    public void Transition(int index)
     {
-        StartCoroutine(TransitionSong());
+        StartCoroutine(TransitionSong(index));
     }
 
     public void ToggleMusic(bool val)
     {
         src.enabled = val;
         if (val)
-            StartCoroutine(TransitionSong());
+            StartCoroutine(TransitionSong(0));
     }
-
-    IEnumerator TransitionSong()
+    public void LoadMenuMusic()
+    {
+        src.clip = musicClips[0];
+        src.Play();
+    }
+    IEnumerator TransitionSong(int index)
     {
         while(src.volume > 0)
         {
@@ -53,7 +58,7 @@ public class MusicManager : MonoBehaviour
             yield return null;
         }
 
-        if (SceneManager.GetActiveScene().name == "TitleScreen")
+        if (index == 0)
             src.clip = musicClips[0];
         else
             src.clip = musicClips[GetRandomSong()];
