@@ -32,7 +32,7 @@ public class Statue : MonoBehaviour
     {
         if (m_bAlive)
         {
-            m_targetLocation = (m_renderer.isVisible ? transform.position : m_playerObj.transform.position);            
+            m_targetLocation = (m_renderer.isVisible ? transform.position : m_playerObj.transform.position);
         }
         else
         {
@@ -60,11 +60,11 @@ public class Statue : MonoBehaviour
             {
                 print("Kill");
 
-                // Start death sequence on the player
-                collision.gameObject.GetComponent<PlayerMovement>().StartDeathSequence();
-
                 // Freeze the statue
                 m_bAlive = false;
+
+                // Start death sequence on the player
+                collision.gameObject.GetComponent<PlayerMovement>().StartDeathSequence();                
             }
         }
     }

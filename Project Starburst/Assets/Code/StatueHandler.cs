@@ -14,6 +14,7 @@ public class StatueHandler : MonoBehaviour
     [SerializeField]
     private float rangeX, rangeZ;
 
+    [SerializeField]
     private List<Statue> m_statueArray;
 
     private Statue m_currentAliveStatue;
@@ -34,23 +35,28 @@ public class StatueHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_statueArray = new List<Statue>();
+        //m_statueArray = new List<Statue>();
 
-        SpawnLivingStatues();
-        SpawnDeadStatues();
+        //SpawnLivingStatues();
+        //SpawnDeadStatues();
 
         m_currentState = StatueState.COOLDOWN;
         m_counter = m_baseStatueCooldown;
+
+        foreach (Statue statue in m_statueArray)
+        {
+            statue.SetPlayerObject(playerObj);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {       
         // Do not do anything until we are done spawning the statues
-        if (!m_bSpawnedDead || !m_bSpawnedAlive)
-        {
-            return;
-        }
+        //if (!m_bSpawnedDead || !m_bSpawnedAlive)
+        //{
+        //    return;
+        //}
 
         // If we are ready for an action, change the state
         if (m_counter > 0)

@@ -54,23 +54,26 @@ public class PlayerLook : MonoBehaviour
 
       if (Physics.Raycast(ray, out hit, 2.5f))
       {
-         if (hit.transform.gameObject.CompareTag(pickupTag))
-         {
-            handImageComponent.enabled = true;
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-               if (hit.transform.CompareTag(pickupTag))
-               {
-                  hit.collider.gameObject.GetComponent<IInteractable>().Interact();
-               }
-            }
-         } else {
+            if (hit.transform.gameObject.CompareTag(pickupTag))
+            {                
+                handImageComponent.enabled = true;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (hit.transform.CompareTag(pickupTag))
+                    {
+                        hit.collider.gameObject.GetComponent<IInteractable>().Interact();
+                    }
+                }
+            } 
+            else 
+            {                
                 handImageComponent.enabled = false;
             }
-        }
-        else {
+      }
+      else 
+      {            
             handImageComponent.enabled = false;
-        }
+      }
 
     }
 

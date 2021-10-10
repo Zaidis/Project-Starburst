@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         // Play scream
 
         // Fade screen
-        LoadLevel.instance.ReloadCurrentLevel();
+        //LoadLevel.instance.ReloadCurrentLevel();
     }
 
 }
