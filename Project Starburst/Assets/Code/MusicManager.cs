@@ -34,45 +34,34 @@ public class MusicManager : MonoBehaviour
     {
         return Random.Range(1, musicClips.Length);
     }
-    public void Transition(int index)
-    {
-        if (!src.enabled)
-            src.enabled = true;
-        StartCoroutine(TransitionSong(index));
-    }
-
+   
     public void ToggleMusic(bool val)
     {
-        src.enabled = val;
         if (val)
-        {
-            src.volume = 0;
-            StartCoroutine(TransitionSong(SceneManager.GetActiveScene().buildIndex));
-        }
+            StartCoroutine(FadeIn());
+        else
+            StartCoroutine(FadeOut());
     }
     public void LoadMenuMusic()
     {
         src.clip = musicClips[0];
         src.Play();
     }
-    IEnumerator TransitionSong(int index)
+
+    public IEnumerator FadeOut()
     {
-        while(src.volume > 0)
+        while (src.volume > 0)
         {
             src.volume -= Time.deltaTime * fadeSpeed;
             yield return null;
         }
-
-        if (index == 0)
-            src.clip = musicClips[0];
-        else
-            src.clip = musicClips[GetRandomSong()];
-        src.Play();
+    }
+    public IEnumerator FadeIn()
+    {
         while (src.volume < maxVolume)
         {
             src.volume += Time.deltaTime * fadeSpeed;
             yield return null;
         }
-        yield return null;
     }
 }

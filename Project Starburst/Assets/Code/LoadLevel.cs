@@ -34,10 +34,11 @@ public class LoadLevel : MonoBehaviour
 
     public void LoadNextLevel() 
     {
-        
         StartCoroutine(LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1));
         if (MusicManager.instance != null)
-            MusicManager.instance.Transition(SceneManager.GetActiveScene().buildIndex + 1);
+        {
+            MusicManager.instance.ToggleMusic(false);
+        }
     }
 
     public void LoadMenu()
@@ -59,7 +60,8 @@ public class LoadLevel : MonoBehaviour
 
     IEnumerator LoadNextLevel(int levelIndex) 
     {
-        buttonPress.Play(0);
+        if(buttonPress != null)
+            buttonPress.Play(0);
         transition.SetTrigger("start");
         yield return new WaitForSeconds(waitTime);
         SceneManager.LoadScene(levelIndex);
