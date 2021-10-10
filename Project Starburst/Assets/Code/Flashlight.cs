@@ -11,9 +11,12 @@ public class Flashlight : MonoBehaviour
     [SerializeField] KeyCode rechargeButton;
     [SerializeField] PlayerMovement playerMovement;
     bool rechargeFlashlight = false, canRecharge = false;
+    AudioSource src;
+
     private void Awake()
     {
         light = GetComponent<Light>();
+        src = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
     void Start()
@@ -80,6 +83,8 @@ public class Flashlight : MonoBehaviour
         if (Input.GetKeyDown(rechargeButton))
         {
             rechargeFlashlight = true;
+            if (!src.isPlaying)
+                src.Play();
         }
         if (rechargeFlashlight)
         {
@@ -95,6 +100,7 @@ public class Flashlight : MonoBehaviour
                 playerMovement.enabled = true;
                 rechargeFlashlight = false;
                 canRecharge = false;
+                src.Stop();
             }
         }
     }

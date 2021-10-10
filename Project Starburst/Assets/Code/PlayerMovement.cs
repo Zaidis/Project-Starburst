@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float gravityValue = -9.81f;
     [SerializeField] Transform cam;
     private bool isDead;
-
+    [SerializeField] AudioSource src;
     private void Start()
     {
         isDead = false;
@@ -36,7 +36,15 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = new Vector3(x, 0f, z);
-
+        if(move.magnitude > 0)
+        {
+            if (!src.isPlaying)
+            {
+                src.pitch = RandomPitch();
+                src.Play();
+            }
+                
+        }
         move = cam.TransformDirection(move);
         controller.Move(move * Time.deltaTime * playerSpeed);
 
@@ -53,6 +61,11 @@ public class PlayerMovement : MonoBehaviour
 
         // Fade screen
         //LoadLevel.instance.ReloadCurrentLevel();
+    }
+
+    float RandomPitch()
+    {
+        return Random.Range(0.6f, 0.8f);
     }
 
 }
