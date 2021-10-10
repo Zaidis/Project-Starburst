@@ -193,7 +193,7 @@ MonoBehaviour:
   leftFootstepSpawner: {fileID: 4059797926804175042}
   rightFootstepSpawner: {fileID: 4059797925786219249}
   agent: {fileID: 4059797926867799682}
-  footstep: {fileID: 3893783713769145867, guid: 691ccd5fc6deb78449e1c809397b5fe9, type: 3}
+  footstep: {fileID: 4309005881678515807, guid: bf9919993196b1c4fa5a0e24af335052, type: 3}
   footstepDisspearTime: 5
   speed: 1
 --- !u!195 &4059797926867799682

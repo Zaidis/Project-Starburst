@@ -35,6 +35,7 @@ public class Walker : MonoBehaviour
    void CreateFootstep()
    {
       isRightStep = !isRightStep;
+      
       var tempSpawn = Instantiate(footstep);
       tempSpawn.transform.position = leftFootstepSpawner.position;
       if (isRightStep)
@@ -46,5 +47,8 @@ public class Walker : MonoBehaviour
       Destroy(tempSpawn, footstepDisspearTime);
       var sound = this.GetComponent<AudioSource>();
       sound.Play();
+
+
+
    }
 }
