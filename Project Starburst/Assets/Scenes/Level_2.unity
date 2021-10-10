@@ -5443,6 +5443,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1671457709, guid: 8722487b7f6fe9f40b76900c127ed431, type: 3}
+      propertyPath: textMessage
+      value: You need all the crystal pieces
+      objectReference: {fileID: 0}
     - target: {fileID: 2611948252678353068, guid: 8722487b7f6fe9f40b76900c127ed431, type: 3}
       propertyPath: m_Name
       value: Skull
