@@ -9,7 +9,7 @@ public class Skull : IInteractable
 {
    PlayerInventory inventory;
    TextMeshProUGUI message;
-   [SerializeField] string textMessage;
+   [SerializeField] public string textMessage;
    // Start is called before the first frame update
    void Start()
    {
