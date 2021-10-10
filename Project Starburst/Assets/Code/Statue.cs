@@ -19,11 +19,15 @@ public class Statue : MonoBehaviour
     // Are we alive?
     private bool m_bAlive;
 
+    // Audio Source on object
+    private AudioSource m_audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         m_renderer = GetComponent<Renderer>();
-        m_navAgent = GetComponent<NavMeshAgent>();        
+        m_navAgent = GetComponent<NavMeshAgent>();
+        m_audioSource = GetComponent<AudioSource>();
         m_bAlive = false;               
     }
 
@@ -45,6 +49,10 @@ public class Statue : MonoBehaviour
     public void SetAlive(bool isAlive)
     {
         m_bAlive = isAlive;
+        if (isAlive)
+        {
+            m_audioSource.Play();
+        }
     }
 
     public void SetPlayerObject(GameObject player)
