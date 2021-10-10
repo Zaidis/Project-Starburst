@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCharge: 100
   currentCharge: 0
-  rechargeRate: 15
+  rechargeRate: 30
   usageSpeed: 5
   flickerEvent: 30
   lightIntensityTarget: 0.4
