@@ -268,6 +268,8 @@ MonoBehaviour:
   playerSpeed: 5
   cam: {fileID: 2571188755117104202}
   src: {fileID: 1897507855514837337}
+  deathNoise: {fileID: 8300000, guid: a9886429cf13c084ca9214d00b08015f, type: 3}
+  canMove: 0
 --- !u!114 &2571188754301394690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +289,7 @@ MonoBehaviour:
   maximumX: 360
   minimumY: -60
   maximumY: 60
+  grabDistance: 5
   transform: {fileID: 2571188755117104202}
   handImageComponent: {fileID: 7344120924879210434}
 --- !u!114 &1609581006991915558

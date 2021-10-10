@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform cam;
     private bool isDead;
     [SerializeField] AudioSource src;
+    [SerializeField] AudioClip deathNoise;
     public bool canMove;
     private void Start()
     {
@@ -73,7 +74,8 @@ public class PlayerMovement : MonoBehaviour
         isDead = true;
 
         // Play scream
-
+        src.clip = deathNoise;
+        src.Play();
         // Fade screen
         LoadLevel.instance.ReloadCurrentLevel();
     }
