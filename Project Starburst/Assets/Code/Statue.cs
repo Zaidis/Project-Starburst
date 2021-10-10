@@ -24,7 +24,7 @@ public class Statue : MonoBehaviour
     {
         m_renderer = GetComponent<Renderer>();
         m_navAgent = GetComponent<NavMeshAgent>();
-        m_navAgent.speed = 4f;
+        m_navAgent.speed = 6f;
         m_bAlive = false;               
     }
 
@@ -45,7 +45,7 @@ public class Statue : MonoBehaviour
 
     public void SetAlive(bool isAlive)
     {
-        m_bAlive = isAlive;        
+        m_bAlive = isAlive;
     }
 
     public void SetPlayerObject(GameObject player)
@@ -59,8 +59,13 @@ public class Statue : MonoBehaviour
         {
             if (collision.gameObject.tag == "Player")
             {
-                // Start death sequence
-                //collision.gameObject.GetComponen<PlayerMovement>().
+                print("Kill");
+
+                // Start death sequence on the player
+                collision.gameObject.GetComponent<PlayerMovement>().StartDeathSequence();
+
+                // Freeze the statue
+                m_bAlive = false;
             }
         }
     }

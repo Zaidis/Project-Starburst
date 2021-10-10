@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!95 &400184945 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 140916235866808657, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+  m_PrefabInstance: {fileID: 1760289881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &671438046
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,6 +912,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1760289881
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 140916234556239542, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916234556239542, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916234556239542, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916234556239542, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916234556239542, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916234556239542, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916234556239542, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916234556239542, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916234556239542, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916234556239542, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916234556239542, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916234556239543, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916235866808658, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: waitTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 140916235866808658, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 400184945}
+    - target: {fileID: 140916235866808659, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
 --- !u!1 &1960205144 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2571188754301394703, guid: 9e76c7c52007f844a8698a6bc7d0e967, type: 3}
@@ -955,8 +1029,8 @@ MonoBehaviour:
   statueAliveObj: {fileID: 3377196520549067246, guid: 8a9b7f6eeb6ec93438a2c57bef267f03, type: 3}
   statueDeadObj: {fileID: 2261821046593751854, guid: 6f97b73db26aa7b42b9e850e31d86633, type: 3}
   playerObj: {fileID: 1960205144}
-  statueAliveCount: 15
-  statueDeadCount: 15
+  statueAliveCount: 1
+  statueDeadCount: 0
   rangeX: 50
   rangeZ: 50
 --- !u!4 &2038556338

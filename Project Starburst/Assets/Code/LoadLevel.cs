@@ -8,19 +8,40 @@ public class LoadLevel : MonoBehaviour
     public Animator transition;
     public float waitTime = 1f;
 
+    public static LoadLevel instance;
+
+    private void Start()
+    {
+        if (instance != null)
+        {
+            Destroy(instance);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.T)) {
-           LoadNextLevel(); 
+           ReloadCurrentLevel(); 
         }
     }
 
-    public void LoadNextLevel() {
+    public void LoadNextLevel() 
+    {
         StartCoroutine(LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
-    IEnumerator LoadNextLevel(int levelIndex) {
+    public void ReloadCurrentLevel()
+    {
+        StartCoroutine(LoadNextLevel(SceneManager.GetActiveScene().buildIndex));
+    }
+
+    IEnumerator LoadNextLevel(int levelIndex) 
+    {
         transition.SetTrigger("start");
         yield return new WaitForSeconds(waitTime);
         SceneManager.LoadScene(levelIndex);
