@@ -21,5 +21,11 @@ public class AudioHandler : MonoBehaviour
         {
             LoadLevel.instance.LoadNextLevel();
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            m_audioSource.Stop();
+            LoadLevel.instance.LoadNextLevel();
+        }
     }
 }
