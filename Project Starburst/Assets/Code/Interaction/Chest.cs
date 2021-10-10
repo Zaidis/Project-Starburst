@@ -10,13 +10,12 @@ public class Chest : IInteractable
     public int id;
     public TextMeshPro chestNumberText;
     public bool FinalChest;
+   public Transform chestSpawner;
+
     private void Awake() {
         anim = transform.parent.GetComponent<Animator>();
     }
 
-    private void Start() {
-        chestNumberText.text = id.ToString();
-    }
     public override void Interact()
     {
         if (!open) {
@@ -24,19 +23,30 @@ public class Chest : IInteractable
         } 
     }
 
+   public void SetChesttext()
+   {
+      chestNumberText.text = id.ToString();
+   }
+
     private void OpenChest() {
-        print("Opening Chest");
-        open = true;
-        anim.Play("chestOpen");
-        ChestHandler.instance.CheckChest(id);
-        if (FinalChest) {
-            if (ChestHandler.instance.CheckCode()) {
-                ChestHandler.instance.OpenDoor();
-            }
-        }
+      var shouldOpen= ChestHandler.instance.CheckChest(id);
+      if(shouldOpen)
+      {
+         open = true;
+         anim.Play("chestOpen");
+         gameObject.tag = "Untagged";
+      }
     }
+
     public void CloseChest() {
-        anim.Play("chestClose");
-        open = false;
+      open = false;
+      anim.Play("chestClose");
+      gameObject.tag = "Interactable";
     }
+
+    public void SpawnSkull()
+   {
+      GameObject skull = Instantiate(ChestHandler.instance.skull, chestSpawner.transform.position,Quaternion.identity);
+      skull.transform.localRotation = Quaternion.Euler(Vector3.zero);
+   }
 }

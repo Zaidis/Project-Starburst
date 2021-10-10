@@ -46,6 +46,7 @@ public class Walker : MonoBehaviour
       tempSpawn.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
       Destroy(tempSpawn, footstepDisspearTime);
       var sound = this.GetComponent<AudioSource>();
+      sound.pitch = RandomPitch();
       sound.Play();
    }
    private void OnCollisionEnter(Collision collision)
@@ -57,5 +58,10 @@ public class Walker : MonoBehaviour
          // Start death sequence on the player
          collision.gameObject.GetComponent<PlayerMovement>().StartDeathSequence();
       }
+   }
+
+   float RandomPitch()
+   {
+      return Random.Range(0.6f, 0.8f);
    }
 }
