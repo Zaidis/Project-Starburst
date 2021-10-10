@@ -88,4 +88,19 @@ public class Mirror_Ghost : MonoBehaviour
         stunned = false;
         agent.isStopped = false;
     }
+
+   /// <summary>
+   /// Kills the player if the ghost collides with it
+   /// </summary>
+   /// <param name="collision"></param>
+   private void OnCollisionEnter(Collision collision)
+   {
+         if (collision.gameObject.tag == "Player")
+         {
+            print("Kill");
+
+            // Start death sequence on the player
+            collision.gameObject.GetComponent<PlayerMovement>().StartDeathSequence();
+         }
+   }
 }
