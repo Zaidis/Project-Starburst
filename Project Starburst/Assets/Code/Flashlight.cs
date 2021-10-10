@@ -88,7 +88,7 @@ public class Flashlight : MonoBehaviour
         }
         if (rechargeFlashlight)
         {
-            playerMovement.enabled = false;
+            playerMovement.canMove = false;
             ToggleFlashlight(false);
             currentCharge += rechargeRate * Time.deltaTime;
             if (currentCharge >= maxCharge)
@@ -97,7 +97,7 @@ public class Flashlight : MonoBehaviour
                 currentCharge = maxCharge;
                 ToggleFlashlight(true);
                 light.intensity = lightIntensityMax;
-                playerMovement.enabled = true;
+                playerMovement.canMove = true;
                 rechargeFlashlight = false;
                 canRecharge = false;
                 src.Stop();

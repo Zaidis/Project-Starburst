@@ -13,9 +13,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform cam;
     private bool isDead;
     [SerializeField] AudioSource src;
+    public bool canMove;
     private void Start()
     {
         isDead = false;
+        canMove = true;
     }
 
     void Update()
@@ -31,30 +33,37 @@ public class PlayerMovement : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
-
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
-
-        Vector3 move = new Vector3(x, 0f, z);
-        move.Normalize();
-
-        if (move.magnitude > 0)
+        if (canMove)
         {
-            if (!src.isPlaying)
+            float x = Input.GetAxisRaw("Horizontal");
+            float z = Input.GetAxisRaw("Vertical");
+
+            Vector3 move = new Vector3(x, 0f, z);
+            move.Normalize();
+
+            if (move.magnitude > 0)
             {
-                src.pitch = RandomPitch();
-                src.Play();
+                if (!src.isPlaying)
+                {
+                    src.pitch = RandomPitch();
+                    src.Play();
+                }
+                move = cam.TransformDirection(move);
+                controller.Move(move * Time.deltaTime * playerSpeed);
             }
-            move = cam.TransformDirection(move);
-            controller.Move(move * Time.deltaTime * playerSpeed);
+            else
+            {
+                controller.Move(new Vector3(0, 0, 0));
+            }
+
+            playerVelocity.y += gravityValue * Time.deltaTime;
+            controller.Move(playerVelocity);
         }
         else
         {
-            controller.Move(new Vector3(0,0,0));
+            controller.Move(new Vector3(0, 0, 0));
         }
-
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity);
+        
         
     }
 
@@ -73,5 +82,4 @@ public class PlayerMovement : MonoBehaviour
     {
         return Random.Range(0.6f, 0.8f);
     }
-
 }
