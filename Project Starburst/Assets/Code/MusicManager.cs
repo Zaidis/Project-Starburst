@@ -30,6 +30,11 @@ public class MusicManager : MonoBehaviour
         src.Play();
     }
 
+    private void Update()
+    {
+        print("Volume " + src.volume);
+    }
+
     int GetRandomSong()
     {
         return Random.Range(1, musicClips.Length);
@@ -54,10 +59,10 @@ public class MusicManager : MonoBehaviour
         {
             src.volume -= Time.deltaTime * fadeSpeed;
             yield return null;
-        }
+        }        
     }
     public IEnumerator FadeIn()
-    {
+    {        
         while (src.volume < maxVolume)
         {
             src.volume += Time.deltaTime * fadeSpeed;

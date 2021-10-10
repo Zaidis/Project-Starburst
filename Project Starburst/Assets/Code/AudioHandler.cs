@@ -18,14 +18,15 @@ public class AudioHandler : MonoBehaviour
     void Update()
     {
         if (!m_audioSource.isPlaying)
-        {
+        {            
+            MusicManager.instance.ToggleMusic(true);
             LoadLevel.instance.LoadNextLevel();
+            Destroy(this);
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
             m_audioSource.Stop();
-            LoadLevel.instance.LoadNextLevel();
         }
     }
 }
