@@ -45,7 +45,10 @@ public class MusicManager : MonoBehaviour
     {
         src.enabled = val;
         if (val)
-            StartCoroutine(TransitionSong(0));
+        {
+            src.volume = 0;
+            StartCoroutine(TransitionSong(SceneManager.GetActiveScene().buildIndex));
+        }
     }
     public void LoadMenuMusic()
     {
