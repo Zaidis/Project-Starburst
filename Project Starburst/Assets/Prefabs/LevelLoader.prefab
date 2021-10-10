@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5e03e6fc4be8445b2c2f9db2f5bb57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
+  transition: {fileID: 140916235866808657}
   waitTime: 1
 --- !u!225 &140916235866808659
 CanvasGroup:

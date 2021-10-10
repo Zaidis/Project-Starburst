@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Skull : IInteractable
 {
    PlayerInventory inventory;
    Text message;
+   [SerializeField] string textMessage;
    // Start is called before the first frame update
    void Start()
    {
@@ -24,11 +26,11 @@ public class Skull : IInteractable
    {
       if(inventory.hasVial || inventory.keyPieceCount >= 4)
       {
-         //Set next scene
+         LoadLevel.instance.LoadNextLevel();
       }
       else
       {
-         message.text = "You need the vial";
+         message.text = textMessage;
          Invoke("DisableMessage", 2.0f);
       }
    }
