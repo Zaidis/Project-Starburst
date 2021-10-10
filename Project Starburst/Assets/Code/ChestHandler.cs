@@ -78,7 +78,7 @@ public class ChestHandler : MonoBehaviour
             num++;
         }
     }
-
+    /*
     private bool HasNumber(int num) {
         for(int i = 0; i < newCode.Length; i++) {
             if(num == newCode[i]) {
@@ -86,7 +86,7 @@ public class ChestHandler : MonoBehaviour
             }
         }
         return false;
-    }
+    } */
 
     private void InitializeChests() {
         for(int i = 0; i < chests.Length; i++) {

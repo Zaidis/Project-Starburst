@@ -1341,6 +1341,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2437264337838375815, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437264337838375815, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2723575890884786301, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2723575890884786301, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2723575890884786301, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2723575890884786301, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2723575890884786301, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2723876535914396035, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1385,9 +1413,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2725766760760157711, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725766760760157711, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725766760760157711, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725766760760157711, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725766760760157711, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2727855370452107321, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
       propertyPath: m_Name
       value: SNAP_LOD_Wall_Gate_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195760376693792436, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33eb22877a588a541a72268b177ac76e, type: 3}
@@ -4120,7 +4172,7 @@ MonoBehaviour:
   open: 0
   id: 0
   chestNumberText: {fileID: 1935949201}
-  FinalChest: 0
+  FinalChest: 1
 --- !u!64 &628902179
 MeshCollider:
   m_ObjectHideFlags: 0
