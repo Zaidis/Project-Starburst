@@ -12,11 +12,12 @@ public class MenuHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ToggleTutorial(false);
+        //ToggleTutorial(false);
     }    
 
     public void ToggleTutorial(bool enableTutorial)
     {
+        LoadLevel.instance.buttonPress.Play(0);
         foreach (GameObject obj in m_normalTextElements)
         {
             obj.SetActive(!enableTutorial);
