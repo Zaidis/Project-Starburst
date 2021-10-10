@@ -18,6 +18,7 @@ public class Door : IInteractable
             transform.parent.parent.gameObject.GetComponent<PlayableDirector>().Play();
          //transform.parent.transform.Rotate(new Vector3(0, 90, 0));
          gameObject.tag = "Untagged";
+            isOpen = true;
       }
    }
 }
