@@ -14954,9 +14954,12 @@ MonoBehaviour:
     - Press F to freeze and recharge your
     flashlight
 
+    - Press E to interact
+
     - Collect Memories of the Dead
 
-    - Don''t let them touch you...'
+    -
+    Don''t let them touch you...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1ea66f54145394c93e707030feee18, type: 2}
   m_sharedMaterial: {fileID: 3993364130636601060, guid: bd1ea66f54145394c93e707030feee18, type: 2}
