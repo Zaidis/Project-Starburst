@@ -3059,7 +3059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 140916234556239543, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 140916235866808658, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
       propertyPath: buttonPress
