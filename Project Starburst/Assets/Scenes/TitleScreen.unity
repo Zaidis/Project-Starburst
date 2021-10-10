@@ -3057,30 +3057,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
-    - target: {fileID: 140916234731288802, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 140916235866808658, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
-      propertyPath: waitTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 140916235866808659, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 140916235866808659, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 140916235866808662, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 140916236079974739, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351c3d122c28b344dad6767f3b2077cd, type: 3}
 --- !u!114 &145241764 stripped
