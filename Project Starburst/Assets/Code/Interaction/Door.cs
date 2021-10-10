@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Playables;
 public class Door : IInteractable
 {
    bool isOpen;
@@ -11,17 +11,12 @@ public class Door : IInteractable
       isOpen = false;
    }
 
-   // Update is called once per frame
-   void Update()
-   {
-
-   }
-
    public override void Interact()
    {
       if(!isOpen)
       {
-         transform.parent.transform.Rotate(new Vector3(0, 90, 0));
+            transform.parent.parent.gameObject.GetComponent<PlayableDirector>().Play();
+         //transform.parent.transform.Rotate(new Vector3(0, 90, 0));
          gameObject.tag = "Untagged";
       }
    }
