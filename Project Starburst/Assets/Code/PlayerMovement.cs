@@ -36,20 +36,26 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = new Vector3(x, 0f, z);
-        if(move.magnitude > 0)
+        move.Normalize();
+        
+        
+
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        controller.Move(playerVelocity);
+        if (move.magnitude > 0)
         {
             if (!src.isPlaying)
             {
                 src.pitch = RandomPitch();
                 src.Play();
             }
-                
+            move = cam.TransformDirection(move);
+            controller.Move(move * Time.deltaTime * playerSpeed);
         }
-        move = cam.TransformDirection(move);
-        controller.Move(move * Time.deltaTime * playerSpeed);
-
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+        else
+        {
+            controller.Move(Vector3.zero);
+        }
     }
 
     public void StartDeathSequence()

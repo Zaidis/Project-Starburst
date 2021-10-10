@@ -61,4 +61,9 @@ public class LoadLevel : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         SceneManager.LoadScene(levelIndex);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
