@@ -195,7 +195,7 @@ MonoBehaviour:
   agent: {fileID: 4059797926867799682}
   footstep: {fileID: 4309005881678515807, guid: bf9919993196b1c4fa5a0e24af335052, type: 3}
   footstepDisspearTime: 5
-  speed: 1
+  speed: 1.5
 --- !u!195 &4059797926867799682
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
